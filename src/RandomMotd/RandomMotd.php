@@ -37,7 +37,7 @@ class RandomMotd extends PluginBase {
 					$sender->sendMessage('사용법: /rmotd delete <번호>');
 					break;
 				}
-				if ($this->motd->deleteMotd($args[1])) {
+				if ($this->motd->deleteMotd($args[1] - 1)) {
 					$sender->sendMessage('성공적으로 해당 motd 를 제거했습니다.');
 				} else {
 					$sender->sendMessage('해당 번호의 motd 가 존재하지 않습니다.');
