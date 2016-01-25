@@ -1,0 +1,28 @@
+name: RandomMotd
+author: maru
+version: "1.0"
+main: RandomMotd\RandomMotd
+api: [1.13.0, 2.0.0]
+
+permissions:
+ randommotd.*:
+  default: OP
+  children:
+   randommotd.cmd.*:
+    children:
+     randommotd.cmd.add:
+     randommotd.cmd.delete:
+     randommotd.cmd.list:
+
+commands:
+ rmotd:
+  description: randommotd command
+  usage: /rmotd <add|delete|list>
+  permission: randommotd.cmd.*
+  children:
+   add:
+    permission: randommotd.cmd.add
+   delete:
+    permission: randommotd.cmd.delete
+   list:
+    permission: randommotd.cmd.list
